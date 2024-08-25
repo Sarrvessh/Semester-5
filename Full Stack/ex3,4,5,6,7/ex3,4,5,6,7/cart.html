@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Book Store - Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="top-div">
+        <img src="logo.jpg" alt="Logo">
+        <h1>Coimbatore Institute of Technology</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="registration.html">Registration</a>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="cart.html">Cart</a>
+            <div class="dropdown">
+                <button class="dropbtn">Department</button>
+                <div class="dropdown-content">
+                    <a href="cse.html">CSE</a>
+                    <a href="ece.html">ECE</a>
+                    <a href="eee.html">EEE</a>
+                    <a href="civil.html">CIVIL</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="right-div">
+        <div class="main-content">
+            <table id="cartTable">
+                <tr>
+                    <th>Book Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                    <th>Remove</th>
+                </tr>
+            </table>
+            <div id="totalAmountDiv">
+                <p>Total Amount: Rs <span id="totalAmount">0</span></p>
+            </div>
+            <button id="checkoutButton" class="checkout-button">Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartTable = document.getElementById('cartTable');
+            let totalAmount = 0;
+
+            cart.forEach((book, index) => {
+                let row = cartTable.insertRow();
+                row.insertCell(0).innerText = book.name;
+                row.insertCell(1).innerText = `Rs ${book.price}`;
+                row.insertCell(2).innerText = book.quantity;
+                row.insertCell(3).innerText = `Rs ${book.amount}`;
+                let removeCell = row.insertCell(4);
+                let removeButton = document.createElement('button');
+                removeButton.innerText = 'Remove';
+                removeButton.className = 'remove-button';
+                removeButton.onclick = function() {
+                    removeBook(index);
+                };
+                removeCell.appendChild(removeButton);
+                totalAmount += book.amount;
+            });
+
+            document.getElementById('totalAmount').innerText = totalAmount;
+        }
+
+        function removeBook(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            location.reload();
+        }
+
+        document.getElementById('checkoutButton').onclick = function() {
+            window.location.href = 'payment.html';
+        };
+
+        window.onload = loadCart;
+    </script>
+</body>
+</html>

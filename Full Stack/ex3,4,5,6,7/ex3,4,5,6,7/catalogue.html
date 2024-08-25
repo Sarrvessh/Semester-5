@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Book Store - Catalogue</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dropdown-content a {
+            display: block;
+        }
+        .category-content {
+            display: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="top-div">
+        <img src="logo.jpg" alt="Logo">
+        <h1>Coimbatore Institute of Technology</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="registration.html">Registration</a>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="cart.html">Cart</a>
+            <div class="dropdown">
+                <button class="dropbtn">Department</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="showCategory('all')">All</a>
+                    <a href="#" onclick="showCategory('cse')">CSE</a>
+                    <a href="#" onclick="showCategory('ece')">ECE</a>
+                    <a href="#" onclick="showCategory('eee')">EEE</a>
+                    <a href="#" onclick="showCategory('civil')">CIVIL</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+   
+    <!-- Catalogue Page Content -->
+    <div id="right-div">
+        <div class="main-content">
+            <!-- Filter by Year -->
+            <label for="year-filter">Filter by Year:</label>
+            <select id="year-filter" onchange="filterByYear()">
+                <option value="all">All Years</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2012">2012</option>
+                <option value="2014">2014</option>
+            </select>
+            <p>Number of items in cart:</p>
+            <span id="cart-badge" class="badge">0</span>
+
+            <table id="catalogueTable">
+                <tr>
+                    <th>Cover</th>
+                    <th>Book</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Price</th>
+                    <th>Year</th>
+                    <th>Add to Cart</th>
+                </tr>
+                <!-- CSE Books -->
+                <tr data-department="cse" data-year="2009">
+                    <td><img src="xml_bible.jpg" alt="Introduction to Algorithms"></td>
+                    <td>Introduction to Algorithms</td>
+                    <td>Thomas H. Cormen</td>
+                    <td>MIT Press</td>
+                    <td>Rs 40.5</td>
+                    <td>2009</td>
+                    <td><button onclick="addToCart('Introduction to Algorithms', 40.5)">Add to Cart</button></td>
+                </tr>
+                <tr data-department="cse" data-year="2010">
+                    <td><img src="ai.jpg" alt="Artificial Intelligence: A Modern Approach"></td>
+                    <td>Artificial Intelligence: A Modern Approach</td>
+                    <td>Stuart Russell</td>
+                    <td>Princeton Hall</td>
+                    <td>Rs 63</td>
+                    <td>2010</td>
+                    <td><button onclick="addToCart('Artificial Intelligence: A Modern Approach', 63)">Add to Cart</button></td>
+                </tr>
+                <tr data-department="cse" data-year="2012">
+                    <td><img src="java_2.jpg" alt="Operating System Concepts"></td>
+                    <td>Operating System Concepts</td>
+                    <td>Abraham Silberschatz</td>
+                    <td>Wiley</td>
+                    <td>Rs 35.5</td>
+                    <td>2012</td>
+                    <td><button onclick="addToCart('Operating System Concepts', 35.5)">Add to Cart</button></td>
+                </tr>
+                
+                <!-- ECE Books -->
+                <tr data-department="ece" data-year="2007">
+                    <td><img src="xml_bible.jpg" alt="Microelectronic Circuits"></td>
+                    <td>Microelectronic Circuits</td>
+                    <td>Adel S. Sedra</td>
+                    <td>Oxford</td>
+                    <td>Rs 40.5</td>
+                    <td>2007</td>
+                    <td><button onclick="addToCart('Microelectronic Circuits', 40.5)">Add to Cart</button></td>
+                </tr>
+                <tr data-department="ece" data-year="2009">
+                    <td><img src="ai.jpg" alt="Digital Signal Processing"></td>
+                    <td>Digital Signal Processing</td>
+                    <td>John G. Proakis</td>
+                    <td>Wiley</td>
+                    <td>Rs 63</td>
+                    <td>2009</td>
+                    <td><button onclick="addToCart('Digital Signal Processing', 63)">Add to Cart</button></td>
+                </tr>
+                <tr data-department="ece" data-year="2014">
+                    <td><img src="java_2.jpg" alt="Electromagnetics"></td>
+                    <td>Electromagnetics</td>
+                    <td>Matthew N.O. Sadiku</td>
+                    <td>McGraw-Hill</td>
+                    <td>Rs 35.5</td>
+                    <td>2014</td>
+                    <td><button onclick="addToCart('Electromagnetics', 35.5)">Add to Cart</button></td>
+                </tr>
+                
+                <!-- EEE Books -->
+                <tr data-department="eee" data-year="2003">
+                    <td><img src="xml_bible.jpg" alt="Electric Machinery and Transformers"></td>
+                    <td>Electric Machinery and Transformers</td>
+                    <td>Bhag S. Guru</td>
+                    <td>Wiley</td>
+                    <td>Rs 40.5</td>
+                    <td>2003</td>
+                    <td><button onclick="addToCart('Electric Machinery and Transformers', 40.5)">Add to Cart</button></td>
+                </tr>
+                <tr data-department="eee" data-year="2004">
+                    <td><img src="ai.jpg" alt="Power System Analysis"></td>
+                    <td>Power System Analysis</td>
+                    <td>Hadi Saadat</td>
+                    <td>McGraw-Hill</td>
+                    <td>Rs 63</td>
+                    <td>2004</td>
+                    <td><button onclick="addToCart('Power System Analysis', 63)">Add to Cart</button></td>
+                </tr>
+                <tr data-department="eee" data-year="2008">
+                    <td><img src="java_2.jpg" alt="Control Systems Engineering"></td>
+                    <td>Control Systems Engineering</td>
+                    <td>Norman S. Nise</td>
+                    <td>Wiley</td>
+                    <td>Rs 35.5</td>
+                    <td>2008</td>
+                    <td><button onclick="addToCart('Control Systems Engineering', 35.5)">Add to Cart</button></td>
+                </tr>
+                
+                <!-- Civil Books -->
+                <tr data-department="civil" data-year="2006">
+                    <td><img src="xml_bible.jpg" alt="Design of Reinforced Concrete Structures"></td>
+                    <td>Design of Reinforced Concrete Structures</td>
+                    <td>M.L. Gambhir</td>
+                    <td>McGraw-Hill</td>
+                    <td>Rs 40.5</td>
+                    <td>2006</td>
+                    <td><button onclick="addToCart('Design of Reinforced Concrete Structures', 40.5)">Add to Cart</button></td>
+                </tr>
+                <tr data-department="civil" data-year="2008">
+                    <td><img src="ai.jpg" alt="Structural Analysis"></td>
+                    <td>Structural Analysis</td>
+                    <td>R.C. Hibbeler</td>
+                    <td>Prentice Hall</td>
+                    <td>Rs 63</td>
+                    <td>2008</td>
+                    <td><button onclick="addToCart('Structural Analysis', 63)">Add to Cart</button></td>
+                </tr>
+                <tr data-department="civil" data-year="2010">
+                    <td><img src="java_2.jpg" alt="Surveying Vol. 1"></td>
+                    <td>Surveying Vol. 1</td>
+                    <td>B.C. Punmia</td>
+                    <td>Sam Publications</td>
+                    <td>Rs 35.5</td>
+                    <td>2010</td>
+                    <td><button onclick="addToCart('Surveying Vol. 1', 35.5)">Add to Cart</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <button id="scroll-top-button" onclick="scrollToTop()" style="display: none;">Top</button>
+    <div id="add-book-form">
+        <h2>Add a New Book</h2>
+        <form id="new-book-form" onsubmit="addNewBook(event)">
+            <label for="book-cover">Book Cover URL:</label>
+            <input type="text" id="book-cover" required>
+            <br>
+            <label for="book-name">Book Name:</label>
+            <input type="text" id="book-name" required>
+            <br>
+            <label for="book-author">Author:</label>
+            <input type="text" id="book-author" required>
+            <br>
+            <label for="book-publisher">Publisher:</label>
+            <input type="text" id="book-publisher" required>
+            <br>
+            <label for="book-price">Price (Rs):</label>
+            <input type="number" id="book-price" required>
+            <br>
+            <label for="book-year">Year:</label>
+            <input type="number" id="book-year" required>
+            <br>
+            <label for="book-department">Department:</label>
+            <select id="book-department" required>
+                <option value="cse">CSE</option>
+                <option value="ece">ECE</option>
+                <option value="eee">EEE</option>
+                <option value="civil">CIVIL</option>
+            </select>
+            <br>
+            <button type="submit">Add Book</button>
+        </form>
+    </div>
+</div>
+    <script>
+        function showCategory(category) {
+            const rows = document.querySelectorAll('#catalogueTable tr[data-department]');
+            rows.forEach(row => {
+                if (category === 'all' || row.getAttribute('data-department') === category) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        function filterByYear() {
+            const filter = document.getElementById('year-filter').value;
+            const rows = document.querySelectorAll('#catalogueTable tr[data-year]');
+
+            rows.forEach(row => {
+                if (filter === 'all' || row.getAttribute('data-year') === filter) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        function addToCart(bookName, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let book = cart.find(item => item.name === bookName);
+            if (book) {
+                book.quantity += 1;
+                book.amount = book.quantity * book.price;
+            } else {
+                cart.push({ name: bookName, price: price, quantity: 1, amount: price });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(bookName + " added to cart");
+        }
+
+        showCategory('all');
+
+    function updateCartBadge() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const badge = document.getElementById('cart-badge');
+        badge.innerText = cart.length;
+    }
+
+window.onload = updateCartBadge;
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.addEventListener('scroll', function() {
+    const scrollTopButton = document.getElementById('scroll-top-button');
+    if (window.scrollY > 300) {
+        scrollTopButton.style.display = 'block';
+    } else {
+        scrollTopButton.style.display = 'none';
+    }
+});
+
+const catalogueTable = document.getElementById('catalogueTable');
+        
+        function addNewBook(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const cover = document.getElementById('book-cover').value;
+            const name = document.getElementById('book-name').value;
+            const author = document.getElementById('book-author').value;
+            const publisher = document.getElementById('book-publisher').value;
+            const price = parseFloat(document.getElementById('book-price').value);
+            const year = parseInt(document.getElementById('book-year').value);
+            const department = document.getElementById('book-department').value;
+
+            if (!cover || !name || !author || !publisher || isNaN(price) || isNaN(year) || !department) {
+                alert('Please fill in all fields correctly.');
+                return;
+            }
+
+            const row = `<tr data-department="${department}" data-year="${year}">
+                <td><img src="${cover}" alt="${name}"></td>
+                <td>${name}</td>
+                <td>${author}</td>
+                <td>${publisher}</td>
+                <td>Rs ${price.toFixed(2)}</td>
+                <td>${year}</td>
+                <td><button onclick="addToCart('${name}', ${price})">Add to Cart</button></td>
+            </tr>`;
+
+            catalogueTable.innerHTML += row;
+
+            // Clear the form
+            document.getElementById('new-book-form').reset();
+        }
+
+        function showCategory(category) {
+            const rows = document.querySelectorAll('#catalogueTable tr[data-department]');
+            rows.forEach(row => {
+                if (category === 'all' || row.getAttribute('data-department') === category) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        function filterByYear() {
+            const filter = document.getElementById('year-filter').value;
+            const rows = document.querySelectorAll('#catalogueTable tr[data-year]');
+
+            rows.forEach(row => {
+                if (filter === 'all' || row.getAttribute('data-year') === filter) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        function addToCart(bookName, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let book = cart.find(item => item.name === bookName);
+            if (book) {
+                book.quantity += 1;
+                book.amount = book.quantity * book.price;
+            } else {
+                cart.push({ name: bookName, price: price, quantity: 1, amount: price });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(bookName + " added to cart");
+            updateCartBadge();
+        }
+
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const badge = document.getElementById('cart-badge');
+            badge.innerText = cart.length;
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function () {
+            const button = document.getElementById('scroll-top-button');
+            if (window.scrollY > 100) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        });
+
+        updateCartBadge();
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .faculty-registration-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .faculty-registration-form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .faculty-registration-form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .faculty-registration-form button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .faculty-registration-form button:hover {
+            background-color: #0056b3;
+        }
+        .loading-spinner {
+            display: none;
+            border: 2px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 2px solid #007bff;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <button onclick="location.href='index.html'">Home</button>
+            <button onclick="location.href='catalogue.html'">Catalogue</button>
+        </nav>
+    </header>
+    <div class="faculty-registration-form">
+        <h2>Faculty Registration Form</h2>
+        <form id="faculty-form">
+            <label for="faculty-id">Faculty ID:</label>
+            <input type="text" id="faculty-id" name="faculty-id" pattern="[A-Za-z0-9]{5,}" title="Faculty ID should be alphanumeric and at least 5 characters long" required>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" pattern="[A-Za-z ]+" title="Name should only contain letters and spaces" required>
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Enter a valid email address" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="\+91[0-9]{10}" title="Phone number must start with +91 followed by 10 digits" required>
+
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" pattern="[A-Za-z ]+" title="Department should only contain letters and spaces" required>
+
+            <label for="designation">Designation:</label>
+            <input type="text" id="designation" name="designation" pattern="[A-Za-z ]+" title="Designation should only contain letters and spaces" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" pattern=".{8,}" title="Password must be at least 8 characters long" required>
+
+            <button type="submit">
+                Register
+                <span class="loading-spinner"></span>
+            </button>
+        </form>
+    </div>
+    <script src="faculty_registration.js"></script>
+</body>
+</html>

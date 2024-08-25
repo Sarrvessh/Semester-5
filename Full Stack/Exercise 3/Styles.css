@@ -1,0 +1,287 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('Library.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px; 
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+.logo-img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.website-name {
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+nav button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background-color: #2980b9;
+}
+
+nav button i {
+    margin-right: 5px;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #2980b9;
+    color: #ecf0f1;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 100%;
+    text-align: left;
+}
+
+.dropbtn:hover {
+    background-color: #1a6fb3;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main Content Styles */
+.main-content {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Side Navigation Styles */
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 20%;
+}
+
+aside .dropdown {
+    width: 100%;
+}
+
+aside .dropdown .dropbtn {
+    width: 100%;
+}
+
+aside button {
+    display: block;
+    width: 100%;
+    background-color: #2980b9;
+    color: #ecf0f1;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+aside button:hover {
+    background-color: #1a6fb3;
+}
+
+/* Section Styles */
+section {
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Category Content Styles */
+.category-content {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+}
+
+/* Book Table Styles */
+.category-content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.category-content th, .category-content td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.category-content th {
+    background-color: #2980b9;
+    color: white;
+    text-align: left;
+}
+
+.category-content tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.category-content tr:hover {
+    background-color: #ddd;
+}
+
+/* Year Filter Styles */
+#year-filter {
+    margin-bottom: 20px;
+}
+
+#year-filter select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Login Form Styles */
+#login-form {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#login-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#login-form label {
+    font-weight: bold;
+}
+
+/* Button Loading Spinner */
+.submit-btn {
+    position: relative;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #fff;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none; /* Hidden by default */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-top: 1px solid #bdc3c7;
+}

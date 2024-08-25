@@ -1,0 +1,317 @@
+/* General styles */
+body {
+    font-family: 'Verdana', sans-serif;
+    background-image: url('bgimg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+#top-div {
+    width: 100%;
+    background-color: #333;
+    padding: 25px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+#top-div img {
+    height: 60px;
+    vertical-align: middle;
+}
+
+#top-div h1{
+    display: inline;
+    margin-left: 25px;
+    vertical-align: middle;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .dropbtn {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Verdana', sans-serif;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Added border-radius */
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #575757; /* Hover color */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 180px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
+    z-index: 1;
+    border-radius: 5px; /* Added border-radius */
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f7f7f7;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 150px; 
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+/* Login Form Styles */
+#login-form {
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #bbb;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    width: 360px;
+    box-sizing: border-box;
+    margin: 20px auto;
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-form button:hover {
+    background-color: #005bb5;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Filter Dropdown Styles */
+#year-filter {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 15px;
+    background-color: #008000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #006400;
+}
+
+.remove-button {
+    background-color: #ff3333;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    background-color: #cc0000;
+}
+
+.Remove {
+    color: #ff3333;
+}
+
+/* Radio buttons styling */
+#login-form .radio-group {
+    display: flex;
+    flex-direction: column; /* Align radio buttons vertically */
+    margin-bottom: 15px;
+}
+
+#login-form .radio-group label {
+    display: flex;
+    align-items: center; /* Align radio button and label text */
+    margin-bottom: 5px; /* Space between radio button options */
+}
+
+#login-form .radio-group input[type="radio"] {
+    margin-right: 10px; /* Space between radio button and label text */
+    accent-color: #0066cc; /* Optional: Set a color for radio button (Modern browsers) */
+}
+
+/* Payment Page Styles */
+#paymentForm, #add-book-form {
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #bbb;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    width: 360px;
+    box-sizing: border-box;
+    margin: 20px auto;
+}
+
+#paymentForm, #add-book-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#paymentForm, #add-book-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.checkout-button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.checkout-button:hover {
+    background-color: #0056b3;
+}
+
+#cart-badge {
+    background-color: #ff3333;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    position: relative;
+    top: -10px;
+    right: 10px;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+#top-div.dark-mode {
+    background-color: #333;
+    border-bottom: 2px solid #444;
+}
+
+nav a.dark-mode {
+    color: #ddd;
+}
+
+nav a.dark-mode:hover {
+    color: #66b2ff;
+}
+
+.dropdown-content a.dark-mode {
+    color: #ddd;
+}
+
+.dropdown-content a.dark-mode:hover {
+    background-color: #555;
+}
+
+pre {
+    background: white; /* Ensures no extra background is added */
+}

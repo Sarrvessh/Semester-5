@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c3890c;
+        }
+        .invoice-container {
+            width: 70%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .invoice-header {
+            text-align: center;
+        }
+        .invoice-header img {
+            width: 1000px;
+            height: 500px;
+        }
+        .invoice-header h1 {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .invoice-table, .invoice-summary {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 20px;
+        }
+        .invoice-table th, .invoice-table td, .invoice-summary td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .invoice-table th, .invoice-summary td {
+            border-radius: 10px;
+        }
+        .invoice-table th {
+            background-color: #f4f4f4;
+        }
+        .invoice-summary {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .total td {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="invoice-header">
+            <img src="C:\Users\Sarvesh PV\Downloads\png-transparent-eddard-stark-daenerys-targaryen-desktop-iron-throne-game-of-thrones-computer-wallpaper-desktop-wallpaper-modern-art.png" alt="Your Logo">
+            <h1>INVOICE</h1>
+        </div>
+
+        <div>
+            <p>Invoice to: <strong>Sanjana Varthini</strong></p>
+            <p>Bill to be settled within 30 days of date of invoice.</p>
+            <table class="invoice-table">
+                <tr>
+                    <th>Invoice No</th>
+                    <td>102</td>
+                    <th>Invoice Date</th>
+                    <td>09 July 2024</td>
+                </tr>
+                <tr>
+                    <th>Issue Date</th>
+                    <td>09 July 2024</td>
+                    <th>Account No</th>
+                    <td>636</td>
+                </tr>
+            </table>
+        </div>
+
+        <table class="invoice-table">
+            <tr>
+                <th>No.</th>
+                <th>Item Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Kothu Parotta</td>
+                <td>Rs.150.00</td>
+                <td>1</td>
+                <td>Rs.150.00</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Gobi Manchurian</td>
+                <td>Rs.100.00</td>
+                <td>2</td>
+                <td>Rs.200.00</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Paneer Labba</td>
+                <td>Rs.200.00</td>
+                <td>1</td>
+                <td>Rs.200.00</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Parotta(2pcs)</td>
+                <td>Rs.50.00</td>
+                <td>1</td>
+                <td>Rs.50.00</td>
+            </tr>
+        </table>
+
+        <table class="invoice-summary">
+            <tr>
+                <td style="text-align: right;" colspan="4">Subtotal</td>
+                <td>Rs.600.00</td>
+            </tr>
+            <tr>
+                <td style="text-align: right;" colspan="4">Tax Rate</td>
+                <td>Rs.100.00</td>
+            </tr>
+            <tr class="total">
+                <td style="text-align: right;" colspan="4">Total</td>
+                <td>Rs.700.00</td>
+            </tr>
+        </table>
+
+        <div style="text-align: center;">
+            <p>Authorised Sign</p>
+        </div>
+    </div>
+</body>
+</html>

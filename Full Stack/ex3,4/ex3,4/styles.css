@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+#top-div {
+    background-color: #333333;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#top-div img {
+    height: 50px;
+    vertical-align: middle;
+}
+
+#top-div h1 {
+    display: inline;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+#left-div {
+    width: 20%;
+    float: left;
+    background-color: #2a2a2a;
+    padding: 10px;
+    color: #e0e0e0;
+}
+
+#left-div a {
+    display: block;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+#left-div a:hover {
+    color: #ffffff;
+}
+
+#right-div {
+    width: 75%;
+    float: right;
+    padding: 10px;
+    background-color: #333333;
+    color: #e0e0e0;
+}
+
+#login-form {
+    margin: 50px auto;
+    width: 340px;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border: 1px solid #444444;
+    border-radius: 4px;
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+}
+
+#login-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    background-color: #1c1c1c;
+    color: #e0e0e0;
+}
+
+#login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#login-form button:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    color: #e0e0e0;
+}
+
+table, th, td {
+    border: 1px solid #444444;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #2a2a2a;
+}
+
+img {
+    height: 100px;
+}
+
+button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}

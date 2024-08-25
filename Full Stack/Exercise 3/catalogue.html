@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="CIT LOGO.png" alt="Library Logo" class="logo-img">
+                Library
+            </div>
+            <div class="website-name">CIT Coimbatore</div>
+            <nav>
+                <button onclick="showLoginForm()"><i class="fas fa-sign-in-alt"></i> Login</button>
+                <button onclick="location.href='index.html'"><i class="fas fa-home"></i> Home</button>
+                <button onclick="location.href='registration.html'"><i class="fas fa-user-plus"></i> Registration</button>
+                <button onclick="location.href='catalogue.html'"><i class="fas fa-book"></i> Catalogue</button>
+                <button onclick="location.href='cart.html'"><i class="fas fa-shopping-cart"></i> Cart</button>
+            </nav>
+        </header>
+        <div class="main-content">
+            <aside>
+                <button onclick="showCategory('cse')">CSE</button>
+                <button onclick="showCategory('ece')">ECE</button>
+                <button onclick="showCategory('eee')">EEE</button>
+                <button onclick="showCategory('civil')">Civil</button>
+            </aside>
+            <section>
+                <div id="cse" class="category-content">
+                    <h3>CSE Books Catalogue</h3>
+                    <select id="cse-year-filter" onchange="filterByYear('cse')">
+                        <option value="all">All Years</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2012">2012</option>
+                    </select>
+                    <table>
+                        <tr>
+                            <th>Book Name</th>
+                            <th>Author</th>
+                            <th>Published Date</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr data-year="2009">
+                            <td>Introduction to Algorithms</td>
+                            <td>Thomas H. Cormen</td>
+                            <td>2009</td>
+                            <td><button onclick="addToCart('Introduction to Algorithms')">Add to Cart</button></td>
+                        </tr>
+                        <tr data-year="2010">
+                            <td>Artificial Intelligence: A Modern Approach</td>
+                            <td>Stuart Russell</td>
+                            <td>2010</td>
+                            <td><button onclick="addToCart('Artificial Intelligence: A Modern Approach')">Add to Cart</button></td>
+                        </tr>
+                        <tr data-year="2012">
+                            <td>Operating System Concepts</td>
+                            <td>Abraham Silberschatz</td>
+                            <td>2012</td>
+                            <td><button onclick="addToCart('Operating System Concepts')">Add to Cart</button></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="ece" class="category-content">
+                    <h3>ECE Books Catalogue</h3>
+                    <select id="ece-year-filter" onchange="filterByYear('ece')">
+                        <option value="all">All Years</option>
+                        <option value="2007">2007</option>
+                        <option value="2009">2009</option>
+                        <option value="2014">2014</option>
+                    </select>
+                    <table>
+                        <tr>
+                            <th>Book Name</th>
+                            <th>Author</th>
+                            <th>Published Date</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr data-year="2007">
+                            <td>Microelectronic Circuits</td>
+                            <td>Adel S. Sedra</td>
+                            <td>2007</td>
+                            <td><button onclick="addToCart('Microelectronic Circuits')">Add to Cart</button></td>
+                        </tr>
+                        <tr data-year="2009">
+                            <td>Digital Signal Processing</td>
+                            <td>John G. Proakis</td>
+                            <td>2009</td>
+                            <td><button onclick="addToCart('Digital Signal Processing')">Add to Cart</button></td>
+                        </tr>
+                        <tr data-year="2014">
+                            <td>Electromagnetics</td>
+                            <td>Matthew N.O. Sadiku</td>
+                            <td>2014</td>
+                            <td><button onclick="addToCart('Electromagnetics')">Add to Cart</button></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="eee" class="category-content">
+                    <h3>EEE Books Catalogue</h3>
+                    <select id="eee-year-filter" onchange="filterByYear('eee')">
+                        <option value="all">All Years</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                        <option value="2008">2008</option>
+                    </select>
+                    <table>
+                        <tr>
+                            <th>Book Name</th>
+                            <th>Author</th>
+                            <th>Published Date</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr data-year="2003">
+                            <td>Electric Machinery and Transformers</td>
+                            <td>Bhag S. Guru</td>
+                            <td>2003</td>
+                            <td><button onclick="addToCart('Electric Machinery and Transformers')">Add to Cart</button></td>
+                        </tr>
+                        <tr data-year="2004">
+                            <td>Power System Analysis</td>
+                            <td>Hadi Saadat</td>
+                            <td>2004</td>
+                            <td><button onclick="addToCart('Power System Analysis')">Add to Cart</button></td>
+                        </tr>
+                        <tr data-year="2008">
+                            <td>Control Systems Engineering</td>
+                            <td>Norman S. Nise</td>
+                            <td>2008</td>
+                            <td><button onclick="addToCart('Control Systems Engineering')">Add to Cart</button></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="civil" class="category-content">
+                    <h3>Civil Books Catalogue</h3>
+                    <select id="civil-year-filter" onchange="filterByYear('civil')">
+                        <option value="all">All Years</option>
+                        <option value="2006">2006</option>
+                        <option value="2008">2008</option>
+                        <option value="2010">2010</option>
+                    </select>
+                    <table>
+                        <tr>
+                            <th>Book Name</th>
+                            <th>Author</th>
+                            <th>Published Date</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr data-year="2006">
+                            <td>Design of Reinforced Concrete Structures</td>
+                            <td>M.L. Gambhir</td>
+                            <td>2006</td>
+                            <td><button onclick="addToCart('Design of Reinforced Concrete Structures')">Add to Cart</button></td>
+                        </tr>
+                        <tr data-year="2008">
+                            <td>Structural Analysis</td>
+                            <td>R.C. Hibbeler</td>
+                            <td>2008</td>
+                            <td><button onclick="addToCart('Structural Analysis')">Add to Cart</button></td>
+                        </tr>
+                        <tr data-year="2010">
+                            <td>Surveying Vol. 1</td>
+                            <td>B.C. Punmia</td>
+                            <td>2010</td>
+                            <td><button onclick="addToCart('Surveying Vol. 1')">Add to Cart</button></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="login-form" class="login-form">
+                    <form>
+                        <label for="username">Login:</label><br>
+                        <input type="text" id="username" name="username"><br><br>
+                        <label for="password">Password:</label><br>
+                        <input type="password" id="password" name="password"><br><br>
+                        <button type="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script>
+        function showCategory(category) {
+            const categories = document.querySelectorAll('.category-content');
+            categories.forEach(cat => cat.style.display = 'none');
+            document.getElementById(category).style.display = 'block';
+        }
+
+        function showLoginForm() {
+            const loginForm = document.getElementById('login-form');
+            loginForm.style.display = loginForm.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function filterByYear(category) {
+            const filter = document.getElementById(`${category}-year-filter`).value;
+            const rows = document.querySelectorAll(`#${category} table tr[data-year]`);
+
+            rows.forEach(row => {
+                if (filter === 'all' || row.getAttribute('data-year') === filter) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        function addToCart(bookName) {
+            alert(`${bookName} has been added to your cart.`);
+        }
+
+        // Initialize the page to show the CSE category by default
+        showCategory('cse');
+    </script>
+</body>
+</html>
